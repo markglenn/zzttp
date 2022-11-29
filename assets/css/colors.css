@@ -1,0 +1,629 @@
+:root {
+  --black: rgb(0, 0, 0);
+  --red: rgb(170, 0, 0);
+  --green: rgb(0, 170, 0);
+  --yellow: rgb(175, 85, 0);
+  --blue: rgb(0, 0, 170);
+  --magenta: rgb(170, 0, 170);
+  --cyan: rgb(0, 170, 170);
+  --white: rgb(170, 170, 170);
+
+  --bright-black: rgb(85, 85, 85);
+  --bright-red: rgb(255, 85, 85);
+  --bright-green: rgb(85, 255, 85);
+  --bright-yellow: rgb(255, 255, 85);
+  --bright-blue: rgb(85, 85, 255);
+  --bright-magenta: rgb(255, 85, 255);
+  --bright-cyan: rgb(85, 255, 255);
+  --bright-white: rgb(255, 255, 255);
+}
+
+/* Generated */
+
+.c00,
+.c10,
+.c20,
+.c30,
+.c40,
+.c50,
+.c60,
+.c70,
+.c80,
+.c90,
+.ca0,
+.cb0,
+.cc0,
+.cd0,
+.ce0,
+.cf0 {
+  color: var(--black);
+}
+
+.c01,
+.c11,
+.c21,
+.c31,
+.c41,
+.c51,
+.c61,
+.c71,
+.c81,
+.c91,
+.ca1,
+.cb1,
+.cc1,
+.cd1,
+.ce1,
+.cf1 {
+  color: var(--red);
+}
+
+.c02,
+.c12,
+.c22,
+.c32,
+.c42,
+.c52,
+.c62,
+.c72,
+.c82,
+.c92,
+.ca2,
+.cb2,
+.cc2,
+.cd2,
+.ce2,
+.cf2 {
+  color: var(--green);
+}
+
+.c03,
+.c13,
+.c23,
+.c33,
+.c43,
+.c53,
+.c63,
+.c73,
+.c83,
+.c93,
+.ca3,
+.cb3,
+.cc3,
+.cd3,
+.ce3,
+.cf3 {
+  color: var(--yellow);
+}
+
+.c04,
+.c14,
+.c24,
+.c34,
+.c44,
+.c54,
+.c64,
+.c74,
+.c84,
+.c94,
+.ca4,
+.cb4,
+.cc4,
+.cd4,
+.ce4,
+.cf4 {
+  color: var(--blue);
+}
+
+.c05,
+.c15,
+.c25,
+.c35,
+.c45,
+.c55,
+.c65,
+.c75,
+.c85,
+.c95,
+.ca5,
+.cb5,
+.cc5,
+.cd5,
+.ce5,
+.cf5 {
+  color: var(--magenta);
+}
+
+.c06,
+.c16,
+.c26,
+.c36,
+.c46,
+.c56,
+.c66,
+.c76,
+.c86,
+.c96,
+.ca6,
+.cb6,
+.cc6,
+.cd6,
+.ce6,
+.cf6 {
+  color: var(--cyan);
+}
+
+.c07,
+.c17,
+.c27,
+.c37,
+.c47,
+.c57,
+.c67,
+.c77,
+.c87,
+.c97,
+.ca7,
+.cb7,
+.cc7,
+.cd7,
+.ce7,
+.cf7 {
+  color: var(--white);
+}
+
+.c08,
+.c18,
+.c28,
+.c38,
+.c48,
+.c58,
+.c68,
+.c78,
+.c88,
+.c98,
+.ca8,
+.cb8,
+.cc8,
+.cd8,
+.ce8,
+.cf8 {
+  color: var(--bright-black);
+}
+
+.c09,
+.c19,
+.c29,
+.c39,
+.c49,
+.c59,
+.c69,
+.c79,
+.c89,
+.c99,
+.ca9,
+.cb9,
+.cc9,
+.cd9,
+.ce9,
+.cf9 {
+  color: var(--bright-red);
+}
+
+.c0a,
+.c1a,
+.c2a,
+.c3a,
+.c4a,
+.c5a,
+.c6a,
+.c7a,
+.c8a,
+.c9a,
+.caa,
+.cba,
+.cca,
+.cda,
+.cea,
+.cfa {
+  color: var(--bright-green);
+}
+
+.c0b,
+.c1b,
+.c2b,
+.c3b,
+.c4b,
+.c5b,
+.c6b,
+.c7b,
+.c8b,
+.c9b,
+.cab,
+.cbb,
+.ccb,
+.cdb,
+.ceb,
+.cfb {
+  color: var(--bright-yellow);
+}
+
+.c0c,
+.c1c,
+.c2c,
+.c3c,
+.c4c,
+.c5c,
+.c6c,
+.c7c,
+.c8c,
+.c9c,
+.cac,
+.cbc,
+.ccc,
+.cdc,
+.cec,
+.cfc {
+  color: var(--bright-blue);
+}
+
+.c0d,
+.c1d,
+.c2d,
+.c3d,
+.c4d,
+.c5d,
+.c6d,
+.c7d,
+.c8d,
+.c9d,
+.cad,
+.cbd,
+.ccd,
+.cdd,
+.ced,
+.cfd {
+  color: var(--bright-magenta);
+}
+
+.c0e,
+.c1e,
+.c2e,
+.c3e,
+.c4e,
+.c5e,
+.c6e,
+.c7e,
+.c8e,
+.c9e,
+.cae,
+.cbe,
+.cce,
+.cde,
+.cee,
+.cfe {
+  color: var(--bright-cyan);
+}
+
+.c0f,
+.c1f,
+.c2f,
+.c3f,
+.c4f,
+.c5f,
+.c6f,
+.c7f,
+.c8f,
+.c9f,
+.caf,
+.cbf,
+.ccf,
+.cdf,
+.cef,
+.cff {
+  color: var(--bright-white);
+}
+
+.c00,
+.c01,
+.c02,
+.c03,
+.c04,
+.c05,
+.c06,
+.c07,
+.c08,
+.c09,
+.c0a,
+.c0b,
+.c0c,
+.c0d,
+.c0e,
+.c0f {
+  background-color: var(--black);
+}
+
+.c10,
+.c11,
+.c12,
+.c13,
+.c14,
+.c15,
+.c16,
+.c17,
+.c18,
+.c19,
+.c1a,
+.c1b,
+.c1c,
+.c1d,
+.c1e,
+.c1f {
+  background-color: var(--red);
+}
+
+.c20,
+.c21,
+.c22,
+.c23,
+.c24,
+.c25,
+.c26,
+.c27,
+.c28,
+.c29,
+.c2a,
+.c2b,
+.c2c,
+.c2d,
+.c2e,
+.c2f {
+  background-color: var(--green);
+}
+
+.c30,
+.c31,
+.c32,
+.c33,
+.c34,
+.c35,
+.c36,
+.c37,
+.c38,
+.c39,
+.c3a,
+.c3b,
+.c3c,
+.c3d,
+.c3e,
+.c3f {
+  background-color: var(--yellow);
+}
+
+.c40,
+.c41,
+.c42,
+.c43,
+.c44,
+.c45,
+.c46,
+.c47,
+.c48,
+.c49,
+.c4a,
+.c4b,
+.c4c,
+.c4d,
+.c4e,
+.c4f {
+  background-color: var(--blue);
+}
+
+.c50,
+.c51,
+.c52,
+.c53,
+.c54,
+.c55,
+.c56,
+.c57,
+.c58,
+.c59,
+.c5a,
+.c5b,
+.c5c,
+.c5d,
+.c5e,
+.c5f {
+  background-color: var(--magenta);
+}
+
+.c60,
+.c61,
+.c62,
+.c63,
+.c64,
+.c65,
+.c66,
+.c67,
+.c68,
+.c69,
+.c6a,
+.c6b,
+.c6c,
+.c6d,
+.c6e,
+.c6f {
+  background-color: var(--cyan);
+}
+
+.c70,
+.c71,
+.c72,
+.c73,
+.c74,
+.c75,
+.c76,
+.c77,
+.c78,
+.c79,
+.c7a,
+.c7b,
+.c7c,
+.c7d,
+.c7e,
+.c7f {
+  background-color: var(--white);
+}
+
+.c80,
+.c81,
+.c82,
+.c83,
+.c84,
+.c85,
+.c86,
+.c87,
+.c88,
+.c89,
+.c8a,
+.c8b,
+.c8c,
+.c8d,
+.c8e,
+.c8f {
+  background-color: var(--bright-black);
+}
+
+.c90,
+.c91,
+.c92,
+.c93,
+.c94,
+.c95,
+.c96,
+.c97,
+.c98,
+.c99,
+.c9a,
+.c9b,
+.c9c,
+.c9d,
+.c9e,
+.c9f {
+  background-color: var(--bright-red);
+}
+
+.ca0,
+.ca1,
+.ca2,
+.ca3,
+.ca4,
+.ca5,
+.ca6,
+.ca7,
+.ca8,
+.ca9,
+.caa,
+.cab,
+.cac,
+.cad,
+.cae,
+.caf {
+  background-color: var(--bright-green);
+}
+
+.cb0,
+.cb1,
+.cb2,
+.cb3,
+.cb4,
+.cb5,
+.cb6,
+.cb7,
+.cb8,
+.cb9,
+.cba,
+.cbb,
+.cbc,
+.cbd,
+.cbe,
+.cbf {
+  background-color: var(--bright-yellow);
+}
+
+.cc0,
+.cc1,
+.cc2,
+.cc3,
+.cc4,
+.cc5,
+.cc6,
+.cc7,
+.cc8,
+.cc9,
+.cca,
+.ccb,
+.ccc,
+.ccd,
+.cce,
+.ccf {
+  background-color: var(--bright-blue);
+}
+
+.cd0,
+.cd1,
+.cd2,
+.cd3,
+.cd4,
+.cd5,
+.cd6,
+.cd7,
+.cd8,
+.cd9,
+.cda,
+.cdb,
+.cdc,
+.cdd,
+.cde,
+.cdf {
+  background-color: var(--bright-magenta);
+}
+
+.ce0,
+.ce1,
+.ce2,
+.ce3,
+.ce4,
+.ce5,
+.ce6,
+.ce7,
+.ce8,
+.ce9,
+.cea,
+.ceb,
+.cec,
+.ced,
+.cee,
+.cef {
+  background-color: var(--bright-cyan);
+}
+
+.cf0,
+.cf1,
+.cf2,
+.cf3,
+.cf4,
+.cf5,
+.cf6,
+.cf7,
+.cf8,
+.cf9,
+.cfa,
+.cfb,
+.cfc,
+.cfd,
+.cfe,
+.cff {
+  background-color: var(--bright-white);
+}

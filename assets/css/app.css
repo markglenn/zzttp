@@ -1,0 +1,23 @@
+/* @import "tailwindcss/base";
+ @import "tailwindcss/components";
+ @import "tailwindcss/utilities";*/
+@import "./colors";
+
+/* This file is for your main application CSS */
+
+@font-face {
+  font-family: "cp437";
+  src: url('/fonts/WebPlus_IBM_VGA_9x16.woff');
+}
+
+:root {
+  --font-scale: 1.5;
+}
+
+div.board {
+  font-family: "cp437";
+  font-size: calc(16px * var(--font-scale));
+  width: calc(9px * 80 * var(--font-scale));
+  display: flex;
+  flex-wrap: wrap;
+}

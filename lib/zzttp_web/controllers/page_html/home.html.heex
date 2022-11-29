@@ -1,0 +1,13 @@
+<div class="board">
+  <span class="c09">T</span>
+  <span class="c01">&#x263A;</span>
+  <%= for _x <- 1..78 do %>
+    <span class="c01">&#<%= Zzttp.Cp437.from_cp437(0x0A) %></span>
+  <% end %>
+
+  <span class="c09">T</span>
+  <span class="c01">▒</span>
+  <%= for _x <- 1..78 do %>
+    <span class="c01">█</span>
+  <% end %>
+</div>
