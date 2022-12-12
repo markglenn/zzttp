@@ -1,12 +1,15 @@
 defmodule Zzttp.ZztFile.Board do
-  alias Zzttp.ZztFile.{BoardProperties, StatusElement}
+  alias Zzttp.ZztFile.{BoardProperties, StatusElement, Tile}
+  alias Zzttp.Elements.ElementType
   alias Zzttp.ZztFile.ZztString
 
   defstruct [:name, :tiles, :properties, :status_elements]
 
+  @type tile_t :: {non_neg_integer, non_neg_integer}
+
   @type t :: %__MODULE__{
           name: String.t(),
-          tiles: List.t(),
+          tiles: [Tile.t()],
           properties: BoardProperties.t(),
           status_elements: [StatusElement.t()]
         }
@@ -24,7 +27,7 @@ defmodule Zzttp.ZztFile.Board do
       {:ok,
        %__MODULE__{
          name: name,
-         tiles: tiles,
+         tiles: to_tile_map(tiles),
          properties: properties,
          status_elements: status_elements
        }, rest_after_board}
@@ -66,4 +69,21 @@ defmodule Zzttp.ZztFile.Board do
   # Decode the RLE contents
   defp add_tiles(tiles, 0, _), do: tiles
   defp add_tiles(tiles, n, tile), do: add_tiles([tile | tiles], n - 1, tile)
+
+  defp to_tile_map(tiles) do
+    tiles
+    |> Enum.zip(0..1499)
+    |> Enum.map(fn {{idx, color}, i} ->
+      %Tile{
+        element: ElementType.element(idx),
+        color: color,
+        position: {rem(i, 60) + 1, div(i, 60) + 1}
+      }
+    end)
+  end
+
+  @spec status_element_at(t(), Tile.position_t()) :: StatusElement.t() | nil
+  def status_element_at(%__MODULE__{status_elements: status_elements}, {x, y}) do
+    Enum.find(status_elements, &(&1.location_x == x && &1.location_y == y))
+  end
 end

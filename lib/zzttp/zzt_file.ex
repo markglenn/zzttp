@@ -2,11 +2,12 @@ defmodule Zzttp.ZztFile do
   alias Zzttp.ZztFile.Board
   alias Zzttp.ZztFile.Header
 
-  @spec load(String.t()) :: no_return()
+  @spec load(String.t()) :: [Board.t()]
   def load(filename) do
     with {:ok, contents} <- File.read(filename),
          {:ok, header, rest} <- Header.load(contents),
-         {:ok, _boards, <<>>} <- load_boards(header.num_boards, rest) do
+         {:ok, boards, <<>>} <- load_boards(header.num_boards, rest) do
+      boards
     end
   end
 

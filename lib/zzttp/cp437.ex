@@ -2,7 +2,7 @@ defmodule Zzttp.Cp437 do
   @doc """
   Convert a code page 437 character into its equivalent unicode character
   """
-  @spec from_cp437(byte) :: byte
+  @spec from_cp437(byte) :: non_neg_integer()
   def from_cp437(char) do
     # Imported from https://raw.githubusercontent.com/torvalds/linux/master/drivers/tty/vt/cp437.uni
     case char do

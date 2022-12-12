@@ -55,7 +55,7 @@
 .cd1,
 .ce1,
 .cf1 {
-  color: var(--red);
+  color: var(--blue);
 }
 
 .c02,
@@ -93,7 +93,7 @@
 .cd3,
 .ce3,
 .cf3 {
-  color: var(--yellow);
+  color: var(--cyan);
 }
 
 .c04,
@@ -112,7 +112,7 @@
 .cd4,
 .ce4,
 .cf4 {
-  color: var(--blue);
+  color: var(--red);
 }
 
 .c05,
@@ -150,7 +150,7 @@
 .cd6,
 .ce6,
 .cf6 {
-  color: var(--cyan);
+  color: var(--yellow);
 }
 
 .c07,
@@ -207,7 +207,7 @@
 .cd9,
 .ce9,
 .cf9 {
-  color: var(--bright-red);
+  color: var(--bright-blue);
 }
 
 .c0a,
@@ -245,7 +245,7 @@
 .cdb,
 .ceb,
 .cfb {
-  color: var(--bright-yellow);
+  color: var(--bright-cyan);
 }
 
 .c0c,
@@ -264,7 +264,7 @@
 .cdc,
 .cec,
 .cfc {
-  color: var(--bright-blue);
+  color: var(--bright-red);
 }
 
 .c0d,
@@ -302,7 +302,7 @@
 .cde,
 .cee,
 .cfe {
-  color: var(--bright-cyan);
+  color: var(--bright-yellow);
 }
 
 .c0f,
@@ -359,7 +359,7 @@
 .c1d,
 .c1e,
 .c1f {
-  background-color: var(--red);
+  background-color: var(--blue);
 }
 
 .c20,
@@ -397,7 +397,7 @@
 .c3d,
 .c3e,
 .c3f {
-  background-color: var(--yellow);
+  background-color: var(--cyan);
 }
 
 .c40,
@@ -416,7 +416,7 @@
 .c4d,
 .c4e,
 .c4f {
-  background-color: var(--blue);
+  background-color: var(--red);
 }
 
 .c50,
@@ -454,7 +454,7 @@
 .c6d,
 .c6e,
 .c6f {
-  background-color: var(--cyan);
+  background-color: var(--yellow);
 }
 
 .c70,
@@ -511,7 +511,7 @@
 .c9d,
 .c9e,
 .c9f {
-  background-color: var(--bright-red);
+  background-color: var(--bright-blue);
 }
 
 .ca0,
@@ -549,7 +549,7 @@
 .cbd,
 .cbe,
 .cbf {
-  background-color: var(--bright-yellow);
+  background-color: var(--bright-cyan);
 }
 
 .cc0,
@@ -568,7 +568,7 @@
 .ccd,
 .cce,
 .ccf {
-  background-color: var(--bright-blue);
+  background-color: var(--bright-red);
 }
 
 .cd0,
@@ -606,7 +606,7 @@
 .ced,
 .cee,
 .cef {
-  background-color: var(--bright-cyan);
+  background-color: var(--bright-yellow);
 }
 
 .cf0,
