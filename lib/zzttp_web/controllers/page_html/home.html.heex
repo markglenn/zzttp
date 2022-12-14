@@ -1,8 +1,5 @@
-<div class="board">
+<main class="game-board">
   <%= for tile <- @game_state.current_board.tiles do %>
-    <!-- <%= tile.element.element_type %> --->
-    <span class={color(tile)}>
-      &#x<%= glyph(@game_state, tile) %>;
-    </span>
+    <span class={color(tile)}>&#x<%= glyph(@game_state, tile) %>;</span>
   <% end %>
-</div>
+</main>

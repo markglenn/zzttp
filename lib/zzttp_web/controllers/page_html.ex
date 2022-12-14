@@ -10,7 +10,6 @@ defmodule ZzttpWeb.PageHTML do
   @spec color(Tile.t()) :: String.t()
   def color(%Tile{element: element, color: color}), do: ElementType.color(element, color)
 
-  @spec glyph(GameState.t(), Tile.t()) :: binary
-  def glyph(%GameState{} = game_state, %Tile{} = tile),
-    do: ElementType.glyph(game_state, tile)
+  @spec glyph(GameState.t(), Tile.t()) :: String.t()
+  def glyph(%GameState{} = game_state, %Tile{} = tile), do: ElementType.glyph(game_state, tile)
 end

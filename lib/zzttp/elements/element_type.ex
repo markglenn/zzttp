@@ -148,7 +148,7 @@ defmodule Zzttp.Elements.ElementType do
 
   @spec to_class(non_neg_integer()) :: String.t()
   defp to_class(color) do
-    "c#{color |> Integer.to_string(16) |> String.pad_leading(2, "0")}"
+    "c#{Integer.to_string(color, 16) |> String.pad_leading(2, "0")}"
     |> String.downcase()
   end
 end

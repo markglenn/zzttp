@@ -11,7 +11,7 @@ defmodule Zzttp.ZztFile.Board do
           name: String.t(),
           tiles: [Tile.t()],
           properties: BoardProperties.t(),
-          status_elements: [StatusElement.t()]
+          status_elements: %{Tile.position_t() => StatusElement.t()}
         }
 
   @spec load(binary) :: {:ok, t(), binary} | {:error, String.t()}
@@ -29,7 +29,7 @@ defmodule Zzttp.ZztFile.Board do
          name: name,
          tiles: to_tile_map(tiles),
          properties: properties,
-         status_elements: status_elements
+         status_elements: to_status_elements_map(status_elements)
        }, rest_after_board}
     else
       _ -> {:error, "Invalid Board Format"}
@@ -82,8 +82,15 @@ defmodule Zzttp.ZztFile.Board do
     end)
   end
 
+  defp to_status_elements_map(status_elements) do
+    status_elements
+    |> Enum.reduce(%{}, fn element, acc ->
+      Map.put(acc, {element.location_x, element.location_y}, element)
+    end)
+  end
+
   @spec status_element_at(t(), Tile.position_t()) :: StatusElement.t() | nil
-  def status_element_at(%__MODULE__{status_elements: status_elements}, {x, y}) do
-    Enum.find(status_elements, &(&1.location_x == x && &1.location_y == y))
+  def status_element_at(%__MODULE__{status_elements: status_elements}, pos) do
+    Map.get(status_elements, pos)
   end
 end

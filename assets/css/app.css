@@ -11,17 +11,20 @@
 }
 
 :root {
-  --font-scale: 2;
+  --font-scale: 1;
+
+  --char-width: calc(9px * var(--font-scale));
+  --char-height: calc(16px * var(--font-scale));
 }
 
-div.board {
+.game-board {
   font-family: "cp437";
-  font-size: calc(16px * var(--font-scale));
-  width: calc(9px * 60 * var(--font-scale));
+  font-size: var(--char-height);
+  width: calc(var(--char-width) * 60);
   display: flex;
   flex-wrap: wrap;
 }
 
-div.board>span {
-  width: calc(9px * var(--font-scale));
+.game-board>span {
+  width: var(--char-width);
 }
