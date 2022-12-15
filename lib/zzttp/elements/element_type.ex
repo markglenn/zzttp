@@ -1,20 +1,61 @@
 defmodule Zzttp.Elements.ElementType do
-  alias Zzttp.Game.GameState
-  alias Zzttp.ZztFile.Board
-  alias Zzttp.ZztFile.Tile
   alias Zzttp.Elements.Element
-  import Bitwise
 
-  @color_element_types [
-    :text_blue,
-    :text_green,
-    :text_cyan,
-    :text_red,
-    :text_purple,
-    :text_brown,
-    :text_black
-  ]
-
+  @type t ::
+          :empty
+          | :board_edge
+          | :messenger
+          | :monitor
+          | :player
+          | :ammo
+          | :torch
+          | :gem
+          | :key
+          | :door
+          | :scroll
+          | :passage
+          | :duplicator
+          | :bomb
+          | :energizer
+          | :star
+          | :clockwise
+          | :counter
+          | :bullet
+          | :water
+          | :forest
+          | :solid
+          | :normal
+          | :breakable
+          | :boulder
+          | :slider_ns
+          | :slider_ew
+          | :fake
+          | :invisible
+          | :blink_wall
+          | :transporter
+          | :line
+          | :ricochet
+          | :blink_ray_horizontal
+          | :bear
+          | :ruffian
+          | :object
+          | :slime
+          | :shark
+          | :spinning_gun
+          | :pusher
+          | :lion
+          | :tiger
+          | :blink_ray_vertical
+          | :head
+          | :segment
+          | :invalid
+          | :text_blue
+          | :text_green
+          | :text_cyan
+          | :text_red
+          | :text_purple
+          | :text_brown
+          | :text_black
   @spec element(byte) :: Element.t()
   def element(0x00),
     do: %Element{glyph: 0x20, color: 0x00, element_type: :empty, walkable: true}
@@ -87,68 +128,4 @@ defmodule Zzttp.Elements.ElementType do
   def element(0x33), do: %Element{glyph: 0x20, color: 0x5F, element_type: :text_purple}
   def element(0x34), do: %Element{glyph: 0x20, color: 0x6F, element_type: :text_brown}
   def element(0x35), do: %Element{glyph: 0x20, color: 0x0F, element_type: :text_black}
-
-  @spec glyph(GameState.t(), Tile.t()) :: String.t()
-  def glyph(%GameState{current_board_idx: 0}, %Tile{element: %{element_type: :player}}) do
-    0x20
-    |> Zzttp.Cp437.from_cp437()
-    |> Integer.to_string(16)
-    |> String.pad_leading(4, "0")
-  end
-
-  def glyph(_game_state, %Tile{element: %{element_type: element_type}, color: glyph})
-      when element_type in @color_element_types do
-    glyph
-    |> Zzttp.Cp437.from_cp437()
-    |> Integer.to_string(16)
-    |> String.pad_leading(4, "0")
-  end
-
-  def glyph(%GameState{current_board: board}, %Tile{
-        element: %{element_type: element_type},
-        position: position
-      })
-      when element_type == :object do
-    board
-    |> Board.status_element_at(position)
-    |> Map.get(:p1)
-    |> Zzttp.Cp437.from_cp437()
-    |> Integer.to_string(16)
-    |> String.pad_leading(4, "0")
-  end
-
-  def glyph(_game_state, %Tile{element: %{glyph: glyph}}) do
-    glyph
-    |> Zzttp.Cp437.from_cp437()
-    |> Integer.to_string(16)
-    |> String.pad_leading(4, "0")
-  end
-
-  @spec color(Element.t(), non_neg_integer()) :: String.t()
-  def color(%Element{element_type: type, color: color}, _) when type in @color_element_types,
-    do: to_class(color)
-
-  # Choose any color
-  def color(%Element{color: 0xFF}, color), do: to_class(color)
-
-  # Special: Choose any FG color on white
-  def color(%Element{color: 0xFE}, color), do: to_class((color &&& 0xF0) + 0xF)
-
-  # Special: ???
-  def color(%Element{color: mask}, _) when mask < 0x0F, do: to_class(mask &&& 0xF)
-
-  def color(%Element{color: mask}, color) do
-    case {mask >>> 4, mask &&& 0x0F} do
-      {0xF, fg} -> color &&& 0xF0 + fg
-      {bg, 0xF} -> (bg <<< 4) + color &&& 0x0F
-      _ -> mask
-    end
-    |> to_class()
-  end
-
-  @spec to_class(non_neg_integer()) :: String.t()
-  defp to_class(color) do
-    "c#{Integer.to_string(color, 16) |> String.pad_leading(2, "0")}"
-    |> String.downcase()
-  end
 end

@@ -17,9 +17,9 @@ defmodule ZzttpWeb.Router do
   scope "/", ZzttpWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
 
-    live "/live", GameLive
+    live "/", GameLive
   end
 
   # Other scopes may use custom stacks.

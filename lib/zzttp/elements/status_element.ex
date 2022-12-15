@@ -1,7 +1,6 @@
-defmodule Zzttp.ZztFile.StatusElement do
+defmodule Zzttp.Elements.StatusElement do
   defstruct ~w(
-    location_x
-    location_y
+    location
     step_x
     step_y
     cycle
@@ -17,8 +16,7 @@ defmodule Zzttp.ZztFile.StatusElement do
   )a
 
   @type t :: %__MODULE__{
-          location_x: non_neg_integer(),
-          location_y: non_neg_integer(),
+          location: Board.location_t(),
           step_x: integer(),
           step_y: integer(),
           cycle: non_neg_integer(),
@@ -62,8 +60,7 @@ defmodule Zzttp.ZztFile.StatusElement do
 
     [
       %__MODULE__{
-        location_x: location_x,
-        location_y: location_y,
+        location: {location_x, location_y},
         step_x: step_x,
         step_y: step_y,
         cycle: cycle,

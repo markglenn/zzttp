@@ -1,12 +1,12 @@
 defmodule Zzttp.ZztFile.Tile do
-  defstruct ~w[element color position]a
+  defstruct ~w[element color location]a
 
+  alias Zzttp.ZztFile.Board
   alias Zzttp.Elements.Element
 
-  @type position_t :: {non_neg_integer, non_neg_integer}
   @type t :: %__MODULE__{
           element: Element.t(),
           color: non_neg_integer(),
-          position: position_t()
+          location: Board.location_t()
         }
 end

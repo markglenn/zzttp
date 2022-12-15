@@ -1,7 +1,7 @@
 defmodule ZzttpWeb.Components.TileComponent do
   use Phoenix.Component
 
-  alias Zzttp.Elements.ElementType
+  alias Zzttp.Elements.Element
   alias Zzttp.Game.GameState
   alias Zzttp.ZztFile.Tile
 
@@ -15,8 +15,8 @@ defmodule ZzttpWeb.Components.TileComponent do
   end
 
   @spec color(Tile.t()) :: String.t()
-  defp color(%Tile{element: element, color: color}), do: ElementType.color(element, color)
+  defp color(%Tile{element: element, color: color}), do: Element.color(element, color)
 
   @spec glyph(GameState.t(), Tile.t()) :: String.t()
-  defp glyph(%GameState{} = game_state, %Tile{} = tile), do: ElementType.glyph(game_state, tile)
+  defp glyph(%GameState{} = game_state, %Tile{} = tile), do: Element.glyph(game_state, tile)
 end

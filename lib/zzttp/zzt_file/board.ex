@@ -1,17 +1,18 @@
 defmodule Zzttp.ZztFile.Board do
-  alias Zzttp.ZztFile.{BoardProperties, StatusElement, Tile}
-  alias Zzttp.Elements.ElementType
+  alias Zzttp.ZztFile.{BoardProperties, Tile}
+  alias Zzttp.Elements.{ElementType, StatusElement}
   alias Zzttp.ZztFile.ZztString
 
   defstruct [:name, :tiles, :properties, :status_elements]
 
+  @type location_t :: {non_neg_integer(), non_neg_integer()}
   @type tile_t :: {non_neg_integer, non_neg_integer}
 
   @type t :: %__MODULE__{
           name: String.t(),
-          tiles: [Tile.t()],
+          tiles: %{location_t => Tile.t()},
           properties: BoardProperties.t(),
-          status_elements: %{Tile.position_t() => StatusElement.t()}
+          status_elements: [StatusElement.t()]
         }
 
   @spec load(binary) :: {:ok, t(), binary} | {:error, String.t()}
@@ -29,7 +30,7 @@ defmodule Zzttp.ZztFile.Board do
          name: name,
          tiles: to_tile_map(tiles),
          properties: properties,
-         status_elements: to_status_elements_map(status_elements)
+         status_elements: status_elements
        }, rest_after_board}
     else
       _ -> {:error, "Invalid Board Format"}
@@ -77,20 +78,13 @@ defmodule Zzttp.ZztFile.Board do
       %Tile{
         element: ElementType.element(idx),
         color: color,
-        position: {rem(i, 60) + 1, div(i, 60) + 1}
+        location: {rem(i, 60) + 1, div(i, 60) + 1}
       }
     end)
+    |> Map.new(&{&1.location, &1})
   end
 
-  defp to_status_elements_map(status_elements) do
-    status_elements
-    |> Enum.reduce(%{}, fn element, acc ->
-      Map.put(acc, {element.location_x, element.location_y}, element)
-    end)
-  end
-
-  @spec status_element_at(t(), Tile.position_t()) :: StatusElement.t() | nil
-  def status_element_at(%__MODULE__{status_elements: status_elements}, pos) do
-    Map.get(status_elements, pos)
-  end
+  @spec status_element_at(t(), location_t()) :: StatusElement.t() | nil
+  def status_element_at(%__MODULE__{status_elements: status_elements}, location),
+    do: Enum.find(status_elements, &(&1.location == location))
 end

@@ -24,8 +24,8 @@ defmodule ZzttpWeb.GameLive do
   def render(assigns) do
     ~H"""
     <main class="game-board">
-      <%= for tile <- @game_state.current_board.tiles do %>
-        <TileComponent.tile tile={tile} game_state={@game_state} />
+      <%= for y <- 1..25, x <- 1..60 do %>
+        <TileComponent.tile tile={@game_state.current_board.tiles[{x, y}]} game_state={@game_state} />
       <% end %>
     </main>
     <%= @counter %>

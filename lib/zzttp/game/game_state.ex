@@ -8,4 +8,9 @@ defmodule Zzttp.Game.GameState do
           current_board_idx: non_neg_integer(),
           boards: [Board.t()]
         }
+
+  def tick(%__MODULE__{current_board: board} = _state) do
+    board.status_elements
+    |> Enum.map(&tick/1)
+  end
 end
